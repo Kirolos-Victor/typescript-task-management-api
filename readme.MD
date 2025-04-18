@@ -1,5 +1,3 @@
-Here’s a clean and professional `README.md` for your Express.js + TypeScript + Prisma project:
-
 ```markdown
 # Task Management API
 
