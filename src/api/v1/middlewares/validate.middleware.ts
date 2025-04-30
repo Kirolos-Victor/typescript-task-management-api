@@ -5,7 +5,7 @@ const validateMiddleware = (schema: AnyZodObject) => (
     req: Request,
     res: Response,
     next: NextFunction
-): void => {
+) => {
     try {
         schema.parse({
             body: req.body,
@@ -14,7 +14,7 @@ const validateMiddleware = (schema: AnyZodObject) => (
         });
         next();
     } catch (error: any) {
-        res.status(400).json({
+        return res.status(400).json({
             success: false,
             message: 'Validation failed',
             errors: error.errors,

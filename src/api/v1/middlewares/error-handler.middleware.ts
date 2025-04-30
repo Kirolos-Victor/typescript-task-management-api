@@ -8,8 +8,8 @@ export const errorHandler = async (err: any, req: Request, res: Response, next: 
 
     const statusCode = err.statusCode || 500;
 
-    res.status(statusCode).json({
+    return res.status(statusCode).json({
         message: err.message || 'Internal Server Error',
     });
-    return;
+
 }
